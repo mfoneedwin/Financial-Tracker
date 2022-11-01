@@ -1,4 +1,7 @@
-# Getting Started with Create React App
+# Financial Tracker app
+
+ Project i did to help track a company finance expenses 
+ was unable to deploy becuase had some problems with the firebase production but be free to have a look at my codes.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
