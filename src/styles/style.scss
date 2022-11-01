@@ -1,0 +1,323 @@
+@import "./colors";
+@import "./variables";
+@import "./reset";
+
+.fallback {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 80vh;
+  &-div {
+    background-color: $yellow;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin-bottom: 15px;
+    border: 15px solid $bg-green;
+  }
+  p {
+    font-size: 15px;
+    color: rgba(0, 0, 0, 0.5);
+  }
+}
+
+.app {
+  max-width: $max;
+  flex: 1;
+  background-color: $bg-gray;
+  padding-bottom: 100px;
+
+  .page {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    &.green {
+      background-color: $bg-green;
+    }
+
+    .subpage {
+      background-color: white;
+      padding: 20px;
+      border-radius: 32px 32px 0 0;
+      &.gray {
+        background-color: $bg-gray;
+      }
+      &.green {
+        background-color: $bg-green;
+      }
+      &.under {
+        margin-top: -30px;
+      }
+      &.hasunder {
+        padding-bottom: 40px;
+      }
+    }
+    .title {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 15px;
+      h2 {
+        font-size: 17px;
+        font-weight: 600;
+        line-height: 24px;
+        color: $black;
+      }
+      a {
+        font-size: 13px;
+        font-weight: 500;
+        line-height: 20px;
+        color: $blue;
+      }
+      button {
+        background-color: transparent;
+        border: none;
+        width: 40px;
+        padding: 0px 10px;
+      }
+    }
+  }
+  .addBtn {
+    position: fixed;
+    bottom: 95px;
+    z-index: 20;
+    right: 15px;
+    @media screen and (min-width: $max) {
+      margin-left: 435px;
+      right: unset;
+    }
+
+    &-btn {
+      background-color: $yellow;
+      border: 3px solid $white;
+      box-shadow: 0px 0px 14px -4px #403e3ea6;
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+    }
+  }
+
+  .loadingContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+  }
+  .nodata {
+    margin: 15px 0;
+    p {
+      text-align: center;
+      text-transform: uppercase;
+      color: rgba(0, 0, 0, 0.4);
+      font-size: 12px;
+      line-height: 20px;
+      font-weight: 600;
+    }
+  }
+  .toptitle {
+    font-size: 18px;
+    color: $black;
+    text-align: center;
+    margin-bottom: 15px;
+    line-height: 24px;
+    font-weight: 600;
+  }
+
+  .addcategoryoverlay {
+    position: fixed;
+    z-index: 40;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background-color: #00000075;
+    height: 100vh;
+  }
+  .addcategory {
+    position: fixed;
+    z-index: 42;
+    background-color: white;
+    border-radius: 5px;
+    padding: 15px;
+    top: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 300px;
+  }
+
+  .detailheader {
+    &-top {
+      display: flex;
+      margin-bottom: 20px;
+      justify-content: space-between;
+      align-items: center;
+
+      &-back {
+        a {
+          svg {
+            transform: rotate(90deg);
+            path {
+              stroke: $lightblack;
+            }
+          }
+        }
+      }
+      &-edit {
+        a {
+          background-color: $blue;
+          color: white;
+          border-radius: 5px;
+          font-size: 13px;
+          line-height: 16px;
+          font-weight: 600;
+          padding: 5px 10px;
+        }
+      }
+    }
+    h2 {
+      text-align: center;
+      font-size: 20px;
+      font-weight: 600;
+      margin: 40px 0;
+    }
+    p {
+      margin: 0;
+      margin-bottom: 5px;
+      text-align: center;
+      color: rgba(0, 0, 0, 0.5);
+      font-size: 11px;
+      font-weight: 300;
+    }
+  }
+  .itemdetail {
+    &-details {
+      margin-bottom: 20px;
+      border-radius: 20px;
+      border: 1px solid $greyborder;
+      padding: 20px;
+
+      &-categorycontainers {
+        display: flex;
+        justify-content: space-between;
+        h3 {
+          font-size: 14px;
+          font-weight: 500;
+          line-height: 20px;
+          color: $black;
+        }
+        p {
+          font-size: 8px;
+          line-height: 11px;
+          font-weight: 200;
+          text-transform: uppercase;
+        }
+        &-category {
+          text-align: right;
+          h3 {
+            font-size: 15px;
+            font-weight: 600;
+          }
+        }
+      }
+      &-valuecontainers {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 10px;
+
+        h2 {
+          font-weight: 700;
+          font-weight: 25px;
+        }
+        &-category {
+          background-color: $blue;
+          width: 45px;
+          height: 45px;
+          border-radius: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          &-container {
+            font-size: 20px;
+          }
+        }
+        &-price {
+          p {
+            font-size: 12px;
+            color: rgba(0, 0, 0, 0.7);
+            span {
+              font-weight: 700;
+              color: $black;
+            }
+          }
+        }
+      }
+    }
+    &-description {
+      background-color: #37474f1a;
+      border-radius: 20px;
+      padding: 10px;
+
+      h2 {
+        text-align: center;
+        font-size: 14px;
+        line-height: 20px;
+        font-weight: 500;
+        margin-bottom: 10px;
+      }
+      &-content {
+        background-color: $darkgreen;
+        border-radius: 20px;
+        padding: 15px;
+        color: $white;
+      }
+    }
+    &-created {
+      font-size: 11px;
+      text-align: center;
+      color: rgba(0, 0, 0, 0.4);
+      margin: 5px 0;
+    }
+    &-buy {
+      background-color: $yellow;
+      border: 1px solid $lightgrey;
+      width: 100%;
+      margin: 10px 0;
+      border-radius: 5px;
+      color: $white;
+      font-size: 16px;
+      padding: 7px 0;
+      font-weight: 600;
+    }
+    &-delete {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 30px;
+      button {
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        padding: 15px;
+        border-radius: 50%;
+        background-color: #f05757;
+        width: 56px;
+        height: 56px;
+
+        svg {
+          fill: $white;
+        }
+      }
+    }
+  }
+}
+
+@import "./components/navigation.scss";
+@import "./components/passcode.scss";
+@import "./components/home.scss";
+@import "./components/transaction.scss";
+@import "./components/bills.scss";
+@import "./components/user.scss";
+@import "./components/form.scss";
+@import "./components/spinner.scss";
+@import "./components/whishlist.scss";

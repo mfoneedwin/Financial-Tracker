@@ -1,0 +1,40 @@
+.cardcontainer {
+  border-radius: 0 !important;
+
+  .addlinkbtn {
+    background-color: $blue;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: center;
+    a {
+      background-color: transparent;
+      border: none;
+      display: flex;
+      color: white;
+      padding: 8px;
+      display: flex;
+      align-items: center;
+
+      svg {
+        width: 30px;
+        margin-right: 10px;
+        path {
+          stroke: white;
+        }
+      }
+      span {
+        font-size: 17px;
+        text-transform: uppercase;
+        line-height: 30px;
+
+        font-weight: 600;
+      }
+    }
+  }
+}
+.billscontainer {
+  .title {
+    justify-content: center !important;
+  }
+}

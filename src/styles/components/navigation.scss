@@ -1,0 +1,81 @@
+.navigation {
+  position: fixed;
+  height: 90px;
+  bottom: 0;
+  width: 100%;
+  padding: 10px;
+  max-width: $max;
+  z-index: 30;
+
+  &-container {
+    height: 100%;
+    border-radius: $cardRadius;
+    -webkit-backdrop-filter: blur(10px);
+    background-color: #ffffff7d;
+    padding: 5px;
+    box-shadow: 0 10px 15px rgb(0 0 0 / 20%);
+    box-sizing: border-box;
+    color: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(10px);
+    background-blend-mode: overlay;
+    display: flex;
+    align-items: center;
+
+    &-item {
+      flex: 1;
+      height: 100%;
+      display: flex;
+      padding: 5px;
+      transition: all 0.2s ease;
+
+      a {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex: 1;
+
+        svg {
+          width: $iconSize;
+          height: $iconSize;
+          path,
+          rect,
+          circle {
+            stroke: $darkgreen2;
+          }
+        }
+        span {
+          display: none;
+          font-size: 11px;
+          font-weight: 600;
+          color: white;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
+      }
+
+      &.active {
+        flex: 2;
+        background-color: $darkgreen;
+        border-radius: 20px;
+
+        a {
+          justify-content: flex-start;
+
+          svg {
+            margin-right: 10px;
+            path,
+            rect,
+            circle {
+              stroke: $yellow;
+            }
+          }
+
+          span {
+            display: block;
+          }
+        }
+      }
+    }
+  }
+}

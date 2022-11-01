@@ -1,0 +1,121 @@
+.passcode {
+  max-width: $max;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  padding: 40px;
+  background-color: $darkgreen;
+  &-top {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    padding: 20px;
+    align-items: center;
+    &-text {
+      text-align: center;
+      color: $white;
+      font-size: 16px;
+      font-weight: 600;
+    }
+    &-code {
+      display: flex;
+      flex: 1;
+      width: 100%;
+      justify-content: space-evenly;
+      align-items: center;
+      padding: 8px 0;
+
+      &.error {
+        animation: shake 0.82s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+        transform: translate3d(0, 0, 0);
+        backface-visibility: hidden;
+        perspective: 1000px;
+      }
+
+      &-item {
+        width: $CodeSize;
+        height: $CodeSize;
+        border-radius: 50%;
+        border: 2px solid $white;
+
+        &.active {
+          background: $white;
+        }
+      }
+
+      @keyframes shake {
+        10%,
+        90% {
+          transform: translate3d(-1px, 0, 0);
+        }
+
+        20%,
+        80% {
+          transform: translate3d(2px, 0, 0);
+        }
+
+        30%,
+        50%,
+        70% {
+          transform: translate3d(-4px, 0, 0);
+        }
+
+        40%,
+        60% {
+          transform: translate3d(4px, 0, 0);
+        }
+      }
+    }
+  }
+  &-middle {
+    display: flex;
+    flex: 5;
+    &-numbers {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      width: 100%;
+
+      &-buttons {
+        flex: 33.33%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        &-button {
+          color: $white;
+          border: none;
+          padding: 0;
+          width: $btnPasscodeSize;
+          height: $btnPasscodeSize;
+          background: $greenishgrey;
+          border-radius: 50%;
+          font-size: 40px;
+          font-weight: bolder;
+
+          &:active {
+            background: $lightengrey;
+          }
+        }
+      }
+    }
+  }
+  &-bottom {
+    display: flex;
+    flex: 1;
+    justify-content: flex-end;
+    &-container {
+      display: flex;
+      align-items: flex-end;
+    }
+    &-button {
+      color: $white;
+      background-color: transparent;
+      border: none;
+      padding: 0;
+
+      &:active {
+        color: $grey;
+      }
+    }
+  }
+}
